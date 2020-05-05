@@ -1,0 +1,144 @@
+@media screen and (max-width: 1366px){
+    /*------------------------------------login and sign up---------------*/
+
+    .signup-heading h1 {
+        color: var(--bg-col);
+        letter-spacing: 1px;
+        margin-bottom: 4%;
+        color: var(--bg-col);
+        font-size: 20px;
+    }
+    
+    .signup-heading h3 {
+        font-size: 12px;
+        color: var(--bg-col);
+        font-weight: 500;
+    }
+
+    .login-heading h1 {
+        color: var(--bg-col);
+        letter-spacing: 1px;
+        margin-bottom: 4%;
+        color: var(--bg-col);
+        font-size: 20px;
+    }
+    
+    .login-heading h3 {
+        font-size: 12px;
+        color: var(--bg-col);
+        font-weight: 500;
+    }
+    
+    .txtb input {
+        font-size: 12px;
+        color: var(--bg-col);
+        border: none;
+        width: 100%;
+        outline: none;
+        background: none;
+        padding: 0 5px;
+        height: 30px;
+    }
+
+    .log-form .inputfile+label {
+        font-size: 16px;
+        /* 20px */
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: nowrap;
+        cursor: pointer;
+        display: block;
+        overflow: hidden;
+        padding: 5px 8px;
+        margin: 0px auto 0px auto;
+        /* 10px 20px */
+    }
+
+    .log-form .inputfile-2+label {
+        font-size: 14px;
+        text-align: center;
+        color: var(--col-text);
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        transition: .4s ease;
+        background: linear-gradient(120deg, #0BAB64, #3BB78F);
+    }
+
+    .txtb span::before {
+        content: attr(data-placeholder);
+        position: absolute;
+        font-size: 12px;
+        font-weight: 500;
+        top: 50%;
+        left: 0;
+        color: var(--bg-col);
+        transform: translateY(-50%);
+        transition: .5s;
+        pointer-events: none;
+    }
+
+    .txtb span::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        transform: translateY(-50%);
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+        transition: .4s ease;
+    }
+    
+    .focus+span::before {
+        top: -5px;
+    }
+    
+    .focus+span::after {
+        width: 100%;
+    }
+    
+
+    .container-check {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding-left: 30px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--bg-col);
+    }
+
+    .log-options a{
+        text-decoration: none;
+        color: #3bb78f;
+        font-size: 12px;
+        margin-left: 30px;
+    }
+    
+
+    .logbtn {
+        font-family: Poppins;
+        font-size: 12px;
+        display: block;
+        padding: 5px 15px;
+        border: none;
+        background-color: #3bb78f;
+        background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        transition: .4s ease;
+        border-radius: 90px;
+        margin: 60px 0px 70px 0px;
+        -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        transition: .4s ease;
+    }
+
+}

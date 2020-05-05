@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Admin Dashboard</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+
+</head>
+
+<body class="grey lighten-3">
+
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container-fluid">
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <h4 class="mb-0">Admin Dashboard</h4>
+            </li>
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons align-items-center">
+            <li class="nav-item">
+              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link waves-effect">
+                <i class="fab fa-github mr-2"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'leafy-home' %}" class="btn btn-info waves-effect nav-item p-2">
+                <i class="fas fa-eye mr-1"></i>View site
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'logout' %}" class="btn btn-danger waves-effect nav-item p-2">
+                <i class="fas fa-sign-out-alt mr-1"></i></i>Logout
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Sidebar -->
+    <div class="sidebar-fixed position-fixed">
+
+      <a class="logo-wrapper waves-effect d-flex align-items-center justify-content-center">
+        <img id="logo-img" src="{% static 'images/new brand logo.png' %}" alt="logo" class="img-fluid">
+        <h3 class="m-0 ml-2 green-text">Leafy</h3>
+      </a>
+
+      <div class="list-group list-group-flush">
+
+        {% if profile %}
+        <a href="{% url 'admin' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="fas fa-user mr-3"></i>Users
+        </a>
+        {% else %}
+        <a href="{% url 'admin' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user mr-3"></i>Users
+        </a>
+        {% endif %}
+
+
+        {% if posts %}
+        <a href="{% url 'adminUserPosts' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="fas fa-user-edit mr-3"></i>User Posts</a>
+        {% else %}
+        <a href="{% url 'adminUserPosts' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user-edit mr-3"></i>User Posts</a>
+        {% endif %}
+
+
+        {% if tags %}
+        <a href="{% url 'adminTags' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="fas fa-tag mr-3"></i>Tags</a>
+        {% else %}
+        <a href="{% url 'adminTags' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-tag mr-3"></i>Tags</a>
+        {% endif %}
+
+
+
+        {% if feed %}
+        <a href="{% url 'adminFeedback' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="far fa-grin mr-3"></i>Feedbacks</a>
+        {% else %}
+        <a href="{% url 'adminFeedback' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="far fa-grin mr-3"></i>Feedbacks</a>
+        {% endif %}
+
+
+
+        {% if rem %}
+        <a href="{% url 'adminRemedies' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="fab fa-envira mr-3"></i>Remedies</a>
+        {% else %}
+        <a href="{% url 'adminRemedies' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="fab fa-envira mr-3"></i>Remedies</a>
+        {% endif %}
+
+
+
+        {% if hist %}
+        <a href="{% url 'adminImages' %}" class="list-group-item list-group-item-action active waves-effect">
+          <i class="far fa-images mr-3"></i>Prediction Images</a>
+        {% else %}
+        <a href="{% url 'adminImages' %}" class="list-group-item list-group-item-action waves-effect">
+          <i class="far fa-images mr-3"></i>Prediction Images</a>
+        {% endif %}
+
+
+
+      </div>
+
+    </div>
+    <!-- Sidebar -->
+
+  </header>
+  <!--Main Navigation-->
+
+
+  {% block content %}
+  {% endblock %}
+
+
+
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <!-- JQuery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+  <!-- Bootstrap tooltips -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script src="{% static 'js/admin.js' %}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
+  
+
+</body>
+
+</html>

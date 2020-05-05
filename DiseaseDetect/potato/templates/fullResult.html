@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+    {% for remedies in rem %}
+        <div class="result-con">
+            <h1 style="text-align: center; margin: 50px 0px; width:100%; color:white;"> {{remedies.disease}} </h1>
+            <h1>Symptom</h1>
+            <ul>
+                <li>{{remedies.symptom_1}}</li>
+                <li>{{remedies.symptom_2}}</li>
+                <li>{{remedies.symptom_3}}</li>
+            </ul>
+
+            <h1>Cause</h1>
+            <ul>
+                <li>{{remedies.cause_1}}</li>
+                <li>{{remedies.cause_2}}</li>
+                <li>{{remedies.cause_3}}</li>
+            </ul>
+
+            <h1>Remedy</h1>
+            <ul>
+                <li>{{remedies.remedy_1}}</li>
+                <li>{{remedies.remedy_2}}</li>
+                <li>{{remedies.remedy_3}}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}

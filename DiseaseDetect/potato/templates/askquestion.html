@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="ask-qw">
+	<div class="ask-question-wrapper">
+		<h1>Post your question</h1>
+		<form action="{% url 'postquestion' %}" method="post" autocomplete="off" onsubmit="return CheckForm()">
+			{% csrf_token %}
+			<div class="q-title-div">
+				<label for="{{ form.title.id_for_label }}">Question title :</label>
+				{{ form.title }}
+			</div>
+			<div class="q-body-div">
+				<label>Question body : </label>
+				{{ form.ques | safe}}
+				{{ form.media }}
+
+			</div>
+			<div class="q-tag-div">
+				<label for="{{ form.tag_id.id_for_label }}">Question tag :</label>
+				{{ form.tag_id }}
+			</div>
+			<input id="bttn" type="submit" name="" value="Post question">
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'js/askq.js' %}"></script>
+
+{% endblock %}

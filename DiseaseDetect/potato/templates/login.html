@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_q_ls.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+    <img class="login-bg-left" src="{% static 'images/login-top-left.svg' %}" alt="image">
+    <img class="login-bg-right" src="{% static 'images/login-bottom-right.svg' %}" alt="image">
+
+    <div class="login-form-body">
+        <div class="left-div">
+            <div class="words-wrapper">
+                <div class="log">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <h3>Secure login</h3>
+                </div>
+                <div class="det">
+                    <i class="fas fa-circle-notch"></i>
+                    <h3>Detect images</h3>
+                </div>
+                <div class="que">
+                    <i class="far fa-question-circle"></i>
+                    <h3>Ask questions</h3>
+                </div>
+            </div>
+        </div>
+        <div class="right-div">
+            <div class="log-form">
+                <form action="{% url 'login' %}" onsubmit="return validLog()" id="feedbackform" class="login-form"
+                    method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{request.GET.next}}">
+                    {% endif %}
+                    <div class="login-heading">
+                        <h1>Login</h1>
+                        <h3>Don't have an account? <a href="{% url 'reg' %}">Create your account.</a></h3>
+                    </div>
+
+                    <div class="flex">
+                        <div class="txtbi">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="txtb">
+                            <input type="text" id="uname" name="uname">
+                            <span data-placeholder="Username*"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="flex">
+                        <div class="txtbi">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="txtb">
+                            <input type="password" id="pass" name="password">
+                            <span data-placeholder="Password*"></span>
+                            <label toggle="#pass" class="fa fa-fw fa-eye field-icon toggle-password"></label>
+                        </div>
+                    </div>
+
+                    <div class="log-options">
+                        <label class="container-check">Keep me logged in
+                            <input name="remember_me" type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="{% url 'password_reset' %}">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="logbtn"> <i class="fas fa-sign-in-alt"></i>Login</button>
+
+                </form>
+                <p id="acc-err-msg1">{{ message1 }}</p>
+                <p id="acc-err-msg2">{{ message2 }}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(".txtb input").on("focus", function () {
+            $(this).addClass("focus");
+        });
+
+        $(".txtb input").on("blur", function () {
+            if ($(this).val() == "")
+                $(this).removeClass("focus");
+        });
+
+
+
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
+</body>
+
+</html>

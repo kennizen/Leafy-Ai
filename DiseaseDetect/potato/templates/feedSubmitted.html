@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Submitted</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <style>
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <p class="alert alert-info text-center" role="alert">Your feedback has been successfully submitted.</p>
+        </div>
+    </div>
+
+
+    <!-- JQuery -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

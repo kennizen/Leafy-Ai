@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Leafy</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_q.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_faq_mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/indexwa.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    {% block css %}
+    {% endblock %}
+
+
+    <script>
+        (function (e, t, n) {
+            var r = e.querySelectorAll("html")[0];
+            r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2")
+        })(document, window, 0);
+    </script>
+
+</head>
+
+<body onload="finishPreload()">
+
+    <div class="preloader-main">
+        <svg id="brand-logo" width="100%" height="100%" viewBox="0 0 628 613" fill="none" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <path
+                d="M370.709,565.76c-1.063,24.394 -21.212,43.821 -45.866,43.821c-25.334,0 -45.902,-20.569 -45.902,-45.903c0,-20.118 12.701,-37.231 30.729,-43.424c-0.275,0.103 0.931,-115.954 0.931,-152.745c0,-201.333 171.135,-221.561 170.325,-222.42c-86.309,-91.669 -196.513,-90.188 -196.484,-90.464c-2.654,22.817 -22.141,39.681 -45.665,39.681c-25.334,0 -45.903,-20.569 -45.903,-45.903c0,-25.335 20.569,-45.903 45.903,-45.903c20.902,0 38.537,13.733 44.076,32.86c140.684,-0.125 212.98,99.283 214.483,98.842c88.962,-26.081 127.347,-77.236 127.43,-74.83c8.374,242.835 -234.375,204.066 -233.937,202.131c4.62,-20.438 25.499,-48.338 56.456,-62.422c130.071,-59.173 122.126,-74.281 120.454,-72.669c-15.63,15.072 -100.38,49.491 -132.861,65.731c-91.552,45.776 -95.08,156.913 -95.08,191.99c0,35.076 0.377,136.108 0.377,136.108c12.685,4.346 22.508,13.274 27.304,25.676c0,0 148.696,-54.792 165.788,-198.166c-18.533,-5.904 -31.973,-23.268 -31.973,-43.747c0,-25.334 20.569,-45.903 45.903,-45.903c25.335,0 45.903,20.569 45.903,45.903c0,21.96 -15.453,40.338 -36.069,44.845c-0.023,3.308 -7.107,145.255 -186.322,216.911l0,0Z" />
+            <path
+                d="M109.758,89.26l62.883,-34.659c0,0 -28.583,66.819 17.807,155.886c33.856,65.003 131.118,177.556 88.102,284.974c-0.404,1.007 14.044,-156.834 -102.775,-250.294c-1.475,-1.18 -102.87,122.578 13.638,232.571c12.956,12.232 51.967,39.129 80.076,91.53c0.169,0.315 -51.815,-28.492 -51.815,-28.492l-22.367,39.45l-68.726,-38.966l22.827,-40.261c0,0 -21.519,-10.504 -36.996,-35.704c-0.477,-0.777 -41.361,21.417 -41.361,21.417l-41.396,-63.748l38.19,-20.641c0,0 -12.738,-27.943 -13.849,-50.415c-0.043,-0.866 -45.959,-1.625 -45.959,-1.625l-5.537,-70.783l47.412,0.373c0,0 0.663,-25.103 13.008,-51.011c0.299,-0.629 -41.571,-24.12 -41.571,-24.12l35.983,-63.466l28.827,16.769c0,0 17.076,-31.034 36.407,-47.039c0.657,-0.543 -12.808,-21.746 -12.808,-21.746Z" />
+            <circle cx="238.777" cy="48.403" r="19.722" />
+            <circle cx="324.843" cy="563.678" r="19.722" />
+            <circle cx="547.197" cy="304.004" r="19.722" />
+        </svg>
+    </div>
+
+    <nav>
+        <div class="nav-bar">
+            <div class="brand-logo">
+                <img id="logo-img" src="{% static 'images/new brand logo.png' %}" alt="logo">
+                <h3 id="logo-name">Leafy</h3>
+            </div>
+            <div class="nav-links">
+
+                <div class="full-links">
+                    <a href="{% url 'leafy-home' %}" class="full_home"><i class="fas fa-home"></i>Home</a>
+                    <a href="{% url 'user-detection' %}" class="full_detection"><i
+                            class="fas fa-circle-notch"></i>Detection</a>
+                    <a href="{% url 'faq-home' %}" class="full_forum"><i class="fab fa-buffer"></i>QnA</a>
+                    <a href="{% url 'info' %}" class="full_info"><i class="fas fa-align-center"></i>Info</a>
+                    <a href="{% url 'user-feedback' %}" class="full_feedback"><i class="far fa-grin"></i>Feedback</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="full_logout"><i class="fas fa-sign-out-alt"></i></i>Logout</a>
+                    {% else %}
+                    <a href="{% url 'reg' %}" class="full_sign-up"><i class="fas fa-user-plus"></i>Sign up</a>
+                    <a href="{% url 'login' %}" class="full_login"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    {% endif %}
+                </div>
+
+                <div class="nav-links-menu-wrapper" onclick="openNav()">
+                    <svg id="menu-logo" width="100%" height="100%" viewBox="0 0 270 270" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                        <circle cx="134.991" cy="134.991" r="130.991"
+                            style="fill:none;stroke:#64dd17;stroke-width:8px;" />
+                    </svg>
+                    <i class="fas fa-ellipsis-v gsap3"></i>
+                </div>
+                <div id="side-menu-overlay" onclick="closeNav()"></div>
+                <div id="side-menu">
+                    <div id="closebtn" onclick="closeNav()">
+                        <i class="fas fa-times"></i>
+                        <h4>Close</h4>
+                    </div>
+                    <div id="menu-items">
+                        <a href="{% url 'leafy-home' %}" class="full_home"><i class="fas fa-home"></i>Home</a>
+                        <a href="{% url 'user-detection' %}" class="full_detection"><i
+                                class="fas fa-circle-notch"></i>Detection</a>
+                        <a href="{% url 'faq-home' %}" class="full_forum"><i class="fab fa-buffer"></i>QnA</a>
+                        <a href="{% url 'info' %}" class="full_info"><i class="fas fa-align-center"></i>Info</a>
+                        <a href="{% url 'user-feedback' %}" class="full_feedback"><i
+                                class="far fa-grin"></i>Feedback</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="full_logout"><i
+                                class="fas fa-sign-out-alt"></i></i>Logout</a>
+                        {% else %}
+                        <a href="{% url 'reg' %}" class="full_sign-up"><i class="fas fa-user-plus"></i>Sign up</a>
+                        <a href="{% url 'login' %}" class="full_login"><i class="fas fa-sign-in-alt"></i>Login</a>
+                        {% endif %}
+                    </div>
+                    <div class="feed-form">
+                        <form action="{url 'user-feedback'}" class="login-form" method="POST" autocomplete="off">
+                            {% csrf_token %}
+                            <h1>Help us improve ?</h1>
+                            <hr>
+                            <div class="feed-close-btn" onclick="hide_feedback()">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="txtb">
+                                <input type="email" id="uname" name="email">
+                                <span data-placeholder="Email-Id"></span>
+                            </div>
+                            <div class="txtb">
+                                <input type="text" id="pass" name="feedback">
+                                <span data-placeholder="Feedback"></span>
+                            </div>
+                            <input type="submit" class="logbtn" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="footer">
+        <!-- <img src="{% static 'images/footer.png' %}"> -->
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo qui velit aut! Officia,
+                possimus quasi explicabo voluptas earum ipsam.
+            </p>
+            <h4>~ BlightAuthor</h4>
+        </div>
+        <div class="social-icons">
+            <h3>Stay Connected</h3>
+            <h4>Follow us on</h4>
+            <div class="icons-social">
+                <a class="fb" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="yt" href="#"><i class="fab fa-youtube"></i></a>
+                <a class="gl" href="#"><i class="fab fa-gitlab"></i></a>
+                <a class="gh" href="#"><i class="fab fa-github-alt"></i></a>
+                <a class="em" href="#"><i class="fas fa-at"></i></a>
+            </div>
+        </div>
+        <div class="contact-us">
+            <h3>Contact Information</h3>
+            <div class="con-ico">
+                <p><i class="fas fa-map-marker-alt"></i>AAU, Jorhat, Assam</p>
+                <p><i class="fas fa-mobile-alt"></i>+91-9865043578</p>
+                <a href="#"><i class="far fa-envelope"></i>aau@gmail.com</a>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <h5>Copyright © 2020 by Leafy All rights reserved.</h5>
+    </div>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/custom-file-input.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+    <script type="text/javascript">
+        $(".txtb input").on("focus", function () {
+            $(this).addClass("focus");
+        });
+
+        $(".txtb input").on("blur", function () {
+            if ($(this).val() == "")
+                $(this).removeClass("focus");
+        });
+    </script>
+
+</body>
+
+</html>

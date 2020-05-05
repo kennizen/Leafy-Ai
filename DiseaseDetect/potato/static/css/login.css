@@ -1,0 +1,619 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins';
+}
+
+html {
+    --bg-col: #212121;
+    --col-text: #fafafa;
+    --btn: #64dd17;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.pro-overlay {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    opacity: 0;
+}
+
+.processing {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    display: none;
+    opacity: 0;
+}
+
+.processing h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 15px;
+    color: var(--col-text);
+}
+
+.processing h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--col-text);
+}
+
+.processing svg {
+    width: 140px;
+    height: 140px;
+}
+
+/*--------------------------------------------------------backgroung image---------------------------------------------------------------*/
+
+.login-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 35%;
+}
+
+.login-bg-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    width: 35%;
+}
+
+/*--------------------------------------------------------background image---------------------------------------------------------------*/
+
+.login-form-body {
+    background-color: #fafafa;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    border-radius: 20px;
+    display: flex;
+}
+
+.signup-form-body {
+    background-color: #fafafa;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+    border-radius: 20px;
+    display: flex;
+}
+
+.words-wrapper {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.words-wrapper .log,
+.det,
+.que {
+    text-align: center;
+}
+
+.words-wrapper .log h3 {
+    text-align: center;
+    color: #fafafa;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.words-wrapper .log i {
+    color: #fafafa;
+}
+
+.words-wrapper .det h3 {
+    text-align: center;
+    color: #fafafa;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.words-wrapper .det i {
+    color: #fafafa;
+}
+
+.words-wrapper .que h3 {
+    text-align: center;
+    color: #fafafa;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.words-wrapper .que i {
+    color: #fafafa;
+}
+
+.login-form-body .left-div {
+    position: relative;
+    width: 50%;
+    background-image: url('login-left-div.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.login-form-body .right-div {
+    position: relative;
+    width: 50%;
+}
+
+.signup-form-body .left-div {
+    position: relative;
+    width: 50%;
+    background-image: url('signup.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.signup-form-body .right-div {
+    position: relative;
+    width: 50%;
+}
+
+.log-form {
+    margin: 0px auto 0px auto;
+    width: 60%;
+}
+
+.login-form {
+    width: 100%;
+    position: relative;
+}
+
+.login-heading {
+    margin: 25% 0px 10% 0px;
+}
+
+.signup-heading {
+    margin: 10% 0px 7% 0px;
+}
+
+.signup-heading h1 {
+    color: var(--bg-col);
+    letter-spacing: 1px;
+    margin-bottom: 6%;
+    color: var(--bg-col);
+    font-size: 35px;
+}
+
+.signup-heading h3 {
+    font-size: 16px;
+    color: var(--bg-col);
+    font-weight: 500;
+}
+
+.signup-heading a {
+    text-decoration: none;
+    color: #3bb78f;
+}
+
+.signup-heading a:hover {
+    color: #10533e;
+}
+
+.login-heading h1 {
+    color: var(--bg-col);
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+    color: var(--bg-col);
+    font-size: 35px;
+}
+
+.login-heading h3 {
+    font-size: 16px;
+    color: var(--bg-col);
+    font-weight: 500;
+}
+
+.login-heading a {
+    text-decoration: none;
+    color: #3bb78f;
+}
+
+.login-heading a:hover {
+    color: #10533e;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 20px;
+    color: #3bb78f;
+    z-index: 3;
+    cursor: pointer;
+    position: relative;
+}
+
+#acc-err-msg1 {
+    text-align: center;
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#acc-err-msg2 {
+    text-align: center;
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2% 0px;
+}
+
+.txtbi i {
+    margin-right: 10px;
+    color: #3bb78f;
+}
+
+.txtb {
+    border-bottom: 1px solid #bdbdbd;
+    position: relative;
+    margin: 4% 0px;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+#err-u-msg {
+    /* position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%); */
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#err-e-msg {
+    /* position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%); */
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.txtb input {
+    font-size: 16px;
+    color: var(--bg-col);
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.txtb span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    font-size: 16px;
+    font-weight: 500;
+    top: 50%;
+    left: 0;
+    color: var(--bg-col);
+    transform: translateY(-50%);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.txtb span::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform: translateY(-50%);
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    transition: 0.4s ease;
+}
+
+.focus + span::before {
+    top: -5px;
+}
+
+.focus + span::after {
+    width: 100%;
+}
+
+.log-options {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.log-options a {
+    text-decoration: none;
+    color: #3bb78f;
+    font-size: 16px;
+    margin-left: 0px;
+}
+
+.log-options a:hover {
+    color: #10533e;
+}
+
+.container-check {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--bg-col);
+}
+
+/* Hide the browser's default checkbox */
+.container-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #bdbdbd;
+}
+
+/* On mouse-over, add a grey background color */
+.container-check:hover input ~ .checkmark {
+    background-color: #757575;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-check input:checked ~ .checkmark {
+    background-color: #3bb78f;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container-check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-check .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.logbtn i {
+    margin-right: 10px;
+}
+
+.logbtn {
+    font-family: Poppins;
+    display: block;
+    padding: 5px 15px;
+    border: none;
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border-radius: 90px;
+    font-size: 16px;
+    margin: 60px 0px 70px 0px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: 0.4s ease;
+}
+
+.logbtn:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    outline: none;
+}
+
+.signbtn i {
+    margin-right: 10px;
+}
+
+.signbtn {
+    font-family: Poppins;
+    display: block;
+    padding: 5px 15px;
+    border: none;
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border-radius: 90px;
+    font-size: 16px;
+    margin: 40px 0px 70px 0px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: 0.4s ease;
+}
+
+.signbtn:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    outline: none;
+}
+
+.log-form .box {
+    margin: 20px auto 0px auto;
+    width: 100%;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.log-form .inputfile + label {
+    font-size: 16px;
+    /* 20px */
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    padding: 10px 8px;
+    margin: 0px auto 0px auto;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    pointer-events: none;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+/* style 2 */
+
+.log-form .inputfile-2 + label {
+    font-size: 16px;
+    text-align: center;
+    color: var(--col-text);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.4s ease;
+    background: linear-gradient(120deg, #0bab64, #3bb78f);
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    outline: none;
+}
+
+.swal-button {
+    padding: 5px 29px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+    color: var(--btn);
+    background: none;
+    outline: none;
+    text-shadow: none;
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: var(--btn);
+    color: var(--bg-col);
+}
+
+.swal-footer {
+    text-align: center;
+}
+
+.swal-modal {
+    background-color: var(--bg-col);
+    border-radius: 20px;
+}
+
+.swal-text {
+    color: var(--col-text);
+}
+
+.swal-title {
+    color: var(--col-text);
+}

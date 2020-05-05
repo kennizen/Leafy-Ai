@@ -1,0 +1,128 @@
+html {
+    --bg-col: #212121;
+    --col-text: #fafafa;
+    --btn: #64dd17;
+}
+
+#email-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 50%;
+    left: 60%;
+    transform: translateX(-60%);
+    background-color: #f5f5f5; /* Black background with opacity */
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#mail {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.email-overlay-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    opacity: 0;
+    display: none;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 60vh;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.delete-confirm-overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.delete-confirm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-col);
+    padding: 0px 30px;
+    z-index: 20;
+    border-radius: 20px;
+    height: 150px;
+    width: 500px;
+    display: none;
+    opacity: 0;
+}
+
+.delete-confirm p {
+    text-align: center;
+    color: var(--col-text);
+    margin: 20px 0px;
+}
+
+.delete-confirm p:nth-child(1) {
+    font-size: 18px;
+}
+
+.delete-confirm p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.delete-confirm .yes-no {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.delete-confirm .yes {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-confirm .yes:hover {
+    color: #f44336;
+}
+
+.delete-confirm .no {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-confirm .no:hover {
+    color: var(--btn);
+}
+
+.tag-form {
+    display: none;
+}
+
+.show {
+    display: block;
+}

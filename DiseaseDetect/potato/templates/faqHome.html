@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+    <div class="faq-header-wrapper">
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+        <div class="user-profile">
+            <div class="upi">
+                {% if user.is_authenticated %}
+                    {% for img in avatar %}
+                        <img src="{{img.avatar.url}}" alt="image">
+                    {% endfor %}
+                {% else %}
+                    <img src="{% static 'images/robot only.svg' %}" alt="image">
+                {% endif %}
+            </div>
+            <h3>Welcome {{user}}</h3>
+            {% if user.is_authenticated %}
+            <div class="link-btn">
+                <a href="{% url 'profile' %}">My profile</a>
+                <h5>Posts ( {{num_pos}} )</h5>
+            </div>
+            {% endif %}
+        </div>
+        <div class="filter">
+            <h4>Filter by tags</h4>
+            <div class="all-filters">
+                <form method="POST" action="{% url 'faq-home' %}">
+                    {% csrf_token %}
+                    <input class="all-tags" type="submit" value="show all" name="tags">
+                </form>
+            </div>
+            <div class="filters">
+                <form method="POST" action="{% url 'faq-home' %}">
+                    {% csrf_token %}
+                    {% for tag in tags %}
+                    <input class="rest-tags" type="submit" value="{{tag}}" name="tags">
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+        <div class="questions-wrapper">
+            <div class="faq-header">
+                <div class="all-q">
+                    <h2>All questions</h2>
+                    <a href="{% url 'postquestion' %}">Ask question</a>
+                </div>
+                <div class="no-and-filter">
+                    <h3>{{num_qs}} questions</h3>
+                </div>
+            </div>
+            {% for question in page_obj %}
+
+            <div class="questions">
+                <div class="user-img">
+                    {% for image in profileImage %}
+                        {% ifequal question.author image.user %}
+                        <img src="{{image.avatar.url}}" alt text="hist">
+                        {% endifequal %}
+                    {% endfor %}
+                </div>
+                <div class="user-content">
+                    <div class="q-title">
+                        <a href="{% url 'getans' question.id %}">{{question.title}}</a>
+                    </div>
+                    <div class="q-body">
+                        <div>{{question.ques|safe}}</div>
+                    </div>
+                    <div class="q-tag">
+                        <div class="tags">
+                            <h5>{{question.tag_id}}</h5>
+                        </div>
+                        <div class="counter-time-name">
+                            <div class="answer-counter">
+                                <h6>answers &nbsp; {{question.num_ans}}</h6>
+                            </div>
+                            <div class="time-posted-name">
+                                <h6>Posted by {{question.author}}</h6> 
+                                <h6>on {{question.datetime}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                    </span>
+
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/faq.js' %}"></script>
+{% endblock %}

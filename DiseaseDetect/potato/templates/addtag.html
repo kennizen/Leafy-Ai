@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add tag</title>
+</head>
+<body>
+<form method="Post" action="/addtag/">
+	{% csrf_token %}
+	<input type="text" name="tag">
+	<input type="submit" name="" value="submit">
+</form>
+</body>
+</html>

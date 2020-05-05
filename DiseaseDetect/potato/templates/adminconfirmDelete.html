@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Confirm Delete</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <style>
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper alert-info">
+        <div class="reset_info  p-3">
+            <p>Are you sure you want to delete this question ?</p>
+            <p>PS. Question will be deleted along with its answers.</p>
+        </div>
+        <form method='POST' action='{% url "adminDelq" id %}' class="d-flex justify-content-around pb-3">
+            {% csrf_token %}
+            <input type="submit" name="yes" value="yes" class="btn btn-danger btn-sm">
+            <input type="submit" name="yes" value="no" class="btn btn-info btn-sm">
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+@media screen and (max-width: 600px) {
+    html {
+        --bg-col: #212121;
+        --col-text: #fafafa;
+        --btn: #64dd17;
+    }
+
+    .login-bg-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 65%;
+    }
+
+    .login-bg-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        width: 65%;
+    }
+
+    .login-form-body {
+        background-color: #fafafa;
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        -moz-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        border-radius: 20px;
+        display: flex;
+    }
+
+    .login-form-body .left-div {
+        position: relative;
+        width: 50%;
+        background-image: url('login-left-div.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: none;
+    }
+
+    .login-form-body .right-div {
+        position: relative;
+        width: 100%;
+    }
+
+    .log-form {
+        margin: 0px auto 0px auto;
+        width: 80%;
+    }
+
+    .field-icon {
+        float: right;
+        margin-left: -25px;
+        margin-top: 15px;
+        color: #3bb78f;
+        z-index: 3;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .login-heading h1 {
+        color: var(--bg-col);
+        letter-spacing: 1px;
+        margin-bottom: 5%;
+        color: var(--bg-col);
+        font-size: 25px !important;
+    }
+
+    .log-options a {
+        text-decoration: none;
+        color: #3bb78f;
+        font-size: 12px !important;
+        margin-left: 0px;
+    }
+
+    .container-check {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding-left: 30px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 12px !important;
+        font-weight: 500;
+        color: var(--bg-col);
+    }
+
+    .logbtn {
+        font-family: Poppins;
+        display: block;
+        padding: 5px 15px;
+        border: none;
+        background-color: #3bb78f;
+        background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        transition: 0.4s ease;
+        border-radius: 90px;
+        font-size: 12px !important;
+        margin: 40px 0px 40px 0px;
+        -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+        transition: 0.4s ease;
+    }
+
+    .signup-form-body {
+        background-color: #fafafa;
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        -moz-box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        box-shadow: 0px 0px 53px -3px rgba(0, 0, 0, 0.48);
+        border-radius: 20px;
+        display: flex;
+    }
+
+    .signup-form-body .left-div {
+        display: none;
+        position: relative;
+        width: 50%;
+        background-image: url('signup.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .signup-form-body .right-div {
+        position: relative;
+        width: 100%;
+    }
+
+    .signup-heading h1 {
+        color: var(--bg-col);
+        letter-spacing: 1px;
+        margin-bottom: 6%;
+        color: var(--bg-col);
+        font-size: 25px !important;
+    }
+}

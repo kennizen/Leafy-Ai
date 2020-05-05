@@ -1,0 +1,78 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<!--Main layout-->
+<main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
+
+        <!-- Heading -->
+        <div class="card mb-4 wow fadeIn">
+
+            <!--Card content-->
+            <div class="card-body d-sm-flex justify-content-between">
+
+                <h4 class="mb-2 mb-sm-0 pt-1">
+                    <a role="button" class="text-info">Tags</a>
+                    <span>/</span>
+                    <span>Dashboard</span>
+                </h4>
+
+                <form class="d-flex justify-content-center" autocomplete="off">
+                    <!-- Default input -->
+                    <input id="usersearch" type="search" placeholder="Type your query" aria-label="Search"
+                        class="form-control">
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Heading -->
+
+    <div class="container d-flex justify-content-between align-items-center mt-5">
+        <h3 class="mb-0">Tags Table</h3>
+        <a class="btn btn-primary" role="button" onclick="tag()"><i class="fas fa-tag mr-2"></i>Add tag</a>
+    </div>
+    <div class="tag-form container">
+        <form action="{% url 'addTag' %}" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="md-form d-flex">
+                <input type="text" id="form1" name="tag" class="form-control">
+                <label for="form1">Type a tag</label>
+                <button type="submit" class="btn btn-info"><i class="fas fa-plus"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-3 bg-white z-depth-1 p-0">
+        <table class="table table-hover text-center">
+            <thead class="primary-color text-white z-depth-1">
+                <tr>
+                    <th scope="col">Tags</th>
+                    <th scope="col" colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="usertable">
+                {% for t in tags %}
+                <tr>
+                    <td class="align-middle">{{t.tag}}</td>
+                    <td class="align-middle"><a href="{% url 'editTag' t.id %}" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit mr-1"></i>Edit</a></td>
+                    <td class="align-middle"><a href="{% url 'delTag' t.id %}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt mr-1"></i>Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</main>
+
+
+{% endblock %}

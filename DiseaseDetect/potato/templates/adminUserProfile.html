@@ -1,0 +1,151 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+{% load static %}
+
+<!--Main layout-->
+<main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
+        <!-- Heading -->
+        <div class="card mb-4 wow fadeIn">
+            <!--Card content-->
+            <div class="card-body d-sm-flex justify-content-between">
+                <h4 class="mb-2 mb-sm-0 pt-1">
+                    <a role="button" class="text-info">User Profiles</a>
+                    <span>/</span>
+                    <span>Dashboard</span>
+                </h4>
+
+                <form class="d-flex justify-content-center" autocomplete="off">
+                    <!-- Default input -->
+                    <input id="usersearch" type="search" placeholder="Type your query" aria-label="Search"
+                        class="form-control" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Heading -->
+    <div class="email-overlay-cover" onclick="hide()">
+    </div>
+    <div id="email-overlay">
+        <!-- Default form contact -->
+        <form class="border border-light p-5" id="submitMail" method='post' action='/sendMail/' autocomplete="off" >
+            {% csrf_token %}
+            <p class="h4 mb-4 text-center">Send Email</p>
+
+            <!-- Name -->
+            <label for="">Reciever's Email Address</label>
+            <input type="text" id="R-mail" class="form-control mb-4" name="R-mail" disabled>
+
+            <!-- Email -->
+            <label for="">Subject</label>
+            <input type="text" id="U-subject" name="Subject" class="form-control mb-4" placeholder="Enter the Subject..." required>
+
+            <!-- Message -->
+            <label for="">Message Body</label>
+            <div class="form-group">
+                <textarea class="form-control rounded-0" name="Body" id="U-body" rows="3"
+                    placeholder="Enter the Message..." required></textarea>
+            </div>
+
+            <!-- Send button -->
+            <button class="btn btn-info" id="admin-email-send" type="submit">Send</button>
+        </form>
+       
+    </div>
+    <div class="container-fluid d-flex justify-content-between align-items-center mt-5">
+        <h3 class="mb-0">User Table</h3>
+        <a class="btn btn-primary" href="{% url 'reg' %}">
+            <i class="fas fa-user-plus mr-2"></i>Add User
+        </a>
+    </div>
+
+    <div class="container-fluid mt-3 p-0">
+        <table class="table table-hover text-center bg-white z-depth-1 table-responsive-md">
+            <thead class="primary-color text-white z-depth-1">
+                <tr>
+                    <th scope="col">Avatar</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Active</th>
+                    <th scope="col" colspan="2">Role</th>
+                    <th scope="col" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="usertable">
+                {% for u in usrs %}
+                {% if not u.is_superuser %}
+                <tr>
+                    {% for image in avatar %}
+                    {% ifequal u.id image.user.id %}
+                    <td class="align-middle">
+                        <img src="{{image.avatar.url}}" alt="avatar-image" text="profile image" height="40px"
+                            width="40px" style="border-radius: 50%;" />
+                    </td>
+                    {% endifequal %}
+                    {% endfor %}
+                    <td class="align-middle">{{u.username}}</td>
+                    <td class="align-middle">{{u.first_name}}</td>
+                    <td class="align-middle">{{u.last_name}}</td>
+                    <td class="align-middle">
+                        <button id="mail" value="{{u.email}}" onclick="show(this.value)">{{u.email}}</button>
+                    </td>
+                    {% if u.is_active %}
+                    <td class="align-middle text-success font-weight-bold">
+                        <i class="fas fa-circle"></i>
+                    </td>
+                    {% else %}
+                    <td class="align-middle text-danger font-weight-bold">
+                        <i class="fas fa-circle"></i>
+                    </td>
+                    {% endif %}
+                    <td>
+                        {% if u.is_staff %}
+                        <a href="{% url 'changeRole' u.id %}" class="btn btn-info btn-sm">
+                            <i class="far fa-user mr-1"></i>Make user
+                        </a>
+                        {% else %}
+                        <a href="{% url 'changeRole' u.id %}" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-user mr-1"></i>Make Admin
+                        </a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% for p in avatar %}
+                        {% if u.id == p.user.id %}
+                        {% if p.is_expert %}
+                        <a class="btn btn-elegant btn-sm" href="/changeExpert/{{p.id}}/">Revoke Expert Status</a>
+                        {% else %}
+                        <a class="btn btn-mdb-color btn-sm" href="/changeExpert/{{p.id}}/">
+                            <i class="far fa-check-circle mr-1"></i>Give Expert Status
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% if u.is_active %}
+                        <a href="{% url 'userBlock' u.id %}" class="btn btn-amber btn-sm">
+                            <i class="fas fa-lock mr-1"></i>Block
+                        </a>
+                        {% else %}
+                        <a href="{% url 'userUnblock' u.id %}" class="btn btn-success btn-sm">
+                            <i class="fas fa-lock-open mr-1"></i>Unblock
+                        </a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'userDelete' u.username %}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt mr-1"></i>Delete
+                        </a>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+{% endblock %}

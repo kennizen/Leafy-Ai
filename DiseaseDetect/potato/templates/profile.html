@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="ask-qw">
+	<div class="profile-heading">
+		<h1>Your Profile</h1>
+	</div>
+
+	<div class="profile-mid-section">
+		<div class="profile-img">
+			<h1>Profile image</h1>
+			<div class="img">
+				{% for img in avatar %}
+					<img src="{{img.avatar.url}}" alt text="hist">
+				{% endfor %}
+			</div>
+			<a href="{% url 'editProfile' %}">Edit Profile<i class="fas fa-user-edit"></i></a>
+		</div>
+		<div class="profile-info">
+			{% for u in ulog %}
+				<div class="username">
+					<h2><i class="fas fa-user"></i>Username</h2>
+					<p>:</p>
+					<h3>{{u.username}}</h3>
+				</div>
+				<div class="fname">
+					<h2><i class="far fa-user"></i>First Name</h2>
+					<p>:</p>
+					<h3>{{u.first_name}}</h3>
+				</div>
+				<div class="lname">
+					<h2><i class="far fa-user"></i>Last Name</h2>
+					<p>:</p>
+					<h3>{{u.last_name}}</h3>
+				</div>
+				<div class="email">
+					<h2><i class="fas fa-envelope"></i>Email ID</h2>
+					<p>:</p>
+					<h3> {{u.email}}</h3>
+				</div>
+			{% endfor %}
+			<div class="question-posted">
+				<h2><i class="fas fa-question-circle"></i>Total questions posted</h2>
+				<p>:</p>
+				<h3>{{num_qs}}</h3>
+			</div>
+			<div class="answer-posted">
+				<h2><i class="fas fa-comment"></i>Total questions answered</h2>
+				<p>:</p>
+				<h3>{{num_ans}}</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-foot-section">
+		<div class="profile-q">
+			<h1>Questions posted so far</h1>
+			<div class="table-wrapper">
+				<table id="profile-q">
+					<tr>
+					  <th>Question Titles</th>
+					  <th>Posted On</th>
+					  <th>Action</th>
+					</tr>
+					{% for q in questions %}
+						<tr>
+							<td><div class="ques-body">{{ q.title }}</div></td>
+							<td>{{ q.datetime }}</td>
+							<td><a href="{% url 'getans' q.id %}"><i class="fas fa-eye"></i></a></td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+		<div class="profile-a">
+			<h1>Answers posted so far</h1>
+			<div class="table-wrapper">
+				<table id="profile-a">
+					<tr>
+						<th>Question Titles</th>
+						<th>Answers</th>
+						<th>Posted On</th>
+						<th>Action</th>
+					</tr>
+					{% for a in answers %}
+						<tr>
+							<td>{{a.qid.title}}</td>
+							<td><div class="ans-body">{{ a.ans_body | safe }}</div></td>
+							<td>{{ a.datetime }}</td>
+							<td><a href="{% url 'edit-an' a.id %}"><i class="fas fa-edit"></i></a></td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+{% endblock %}

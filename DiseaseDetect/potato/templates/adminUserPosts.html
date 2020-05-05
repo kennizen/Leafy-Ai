@@ -1,0 +1,108 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!--Main layout-->
+<main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
+
+        <!-- Heading -->
+        <div class="card mb-4 wow fadeIn">
+
+            <!--Card content-->
+            <div class="card-body d-sm-flex justify-content-between">
+
+                <h4 class="mb-2 mb-sm-0 pt-1">
+                    <a role="button" class="text-info">User Posts</a>
+                    <span>/</span>
+                    <span>Dashboard</span>
+                </h4>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Heading -->
+
+    <div class="container-fluid mt-5 d-flex align-items-center justify-content-between">
+        <h3 class="mb-0">User Questions Table</h3>
+        <form class="d-flex justify-content-center">
+            <!-- Default input -->
+            <input id="usersearch" type="search" placeholder="Type your query" aria-label="Search" class="form-control">
+            
+
+        </form>
+    </div>
+    <div class="container-fluid mt-3 bg-white z-depth-1 p-0">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-hover table-bordered">
+                <thead class="primary-color text-white">
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Question</th>
+                        <th scope="col">Tag</th>
+                        <th scope="col">Date Posted</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="usertable">
+                    {% for q in qns %}
+                    <tr>
+                        <td class="align-middle">{{q.author}}</td>
+                        <td class="align-middle">{{q.title}}</td>
+                        <td class="align-middle">{{q.ques|safe}}</td>
+                        <td class="align-middle">{{q.tag_id}}</td>
+                        <td class="align-middle">{{q.datetime}}</td>
+                        <td class="align-middle"><a href="{% url 'adminDelq' q.id %}" class="btn btn-danger btn-sm p-2">
+                            <i class="fas fa-trash-alt mr-1"></i>Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt-5 d-flex align-items-center justify-content-between">
+        <h3 class="mb-0">User Answers Table</h3>
+        <form class="d-flex justify-content-center">
+            <!-- Default input -->
+            <input id="anssearch" type="search" placeholder="Type your query" aria-label="Search" class="form-control">
+            
+
+        </form>
+    </div>
+    <div class="container-fluid mt-3 bg-white z-depth-1 p-0">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-hover table-bordered">
+                <thead class="primary-color text-white">
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Question Title</th>
+                        <th scope="col">Answer</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="anstable">
+                    {% for a in ans %}
+                    <tr>
+                        <td class="align-middle">{{a.uid}}</td>
+                        <td class="align-middle">{{a.qid.title}}</td>
+                        <td class="align-middle">{{a.ans_body |safe}}</td>
+                        <td class="align-middle">{{a.datetime}}</td>
+                        <td class="align-middle"><a href="{% url 'adminDela' a.id %}" class="btn btn-danger btn-sm p-2"> 
+                            <i class="fas fa-trash-alt mr-1"></i>Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

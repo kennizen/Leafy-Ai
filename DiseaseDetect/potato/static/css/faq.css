@@ -1,0 +1,1062 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    --bg-col: #212121;
+    --col-text: #FAFAFA;
+    --btn: #64DD17;
+    scroll-behavior: smooth;
+}
+
+.faq-header-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100%;
+    padding: 5% 0px 2% 0px;
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke-opacity='0.02'%3E%3Cg stroke='%23ffffff' stroke-width='17'%3E%3Cline x1='-8' y1='-8' x2='808' y2='808'/%3E%3Cline x1='-8' y1='792' x2='808' y2='1608'/%3E%3Cline x1='-8' y1='-808' x2='808' y2='8'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='16'%3E%3Cline x1='-8' y1='767' x2='808' y2='1583'/%3E%3Cline x1='-8' y1='17' x2='808' y2='833'/%3E%3Cline x1='-8' y1='-33' x2='808' y2='783'/%3E%3Cline x1='-8' y1='-783' x2='808' y2='33'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='15'%3E%3Cline x1='-8' y1='742' x2='808' y2='1558'/%3E%3Cline x1='-8' y1='42' x2='808' y2='858'/%3E%3Cline x1='-8' y1='-58' x2='808' y2='758'/%3E%3Cline x1='-8' y1='-758' x2='808' y2='58'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='14'%3E%3Cline x1='-8' y1='67' x2='808' y2='883'/%3E%3Cline x1='-8' y1='717' x2='808' y2='1533'/%3E%3Cline x1='-8' y1='-733' x2='808' y2='83'/%3E%3Cline x1='-8' y1='-83' x2='808' y2='733'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='13'%3E%3Cline x1='-8' y1='92' x2='808' y2='908'/%3E%3Cline x1='-8' y1='692' x2='808' y2='1508'/%3E%3Cline x1='-8' y1='-108' x2='808' y2='708'/%3E%3Cline x1='-8' y1='-708' x2='808' y2='108'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='12'%3E%3Cline x1='-8' y1='667' x2='808' y2='1483'/%3E%3Cline x1='-8' y1='117' x2='808' y2='933'/%3E%3Cline x1='-8' y1='-133' x2='808' y2='683'/%3E%3Cline x1='-8' y1='-683' x2='808' y2='133'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='11'%3E%3Cline x1='-8' y1='642' x2='808' y2='1458'/%3E%3Cline x1='-8' y1='142' x2='808' y2='958'/%3E%3Cline x1='-8' y1='-158' x2='808' y2='658'/%3E%3Cline x1='-8' y1='-658' x2='808' y2='158'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='10'%3E%3Cline x1='-8' y1='167' x2='808' y2='983'/%3E%3Cline x1='-8' y1='617' x2='808' y2='1433'/%3E%3Cline x1='-8' y1='-633' x2='808' y2='183'/%3E%3Cline x1='-8' y1='-183' x2='808' y2='633'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='9'%3E%3Cline x1='-8' y1='592' x2='808' y2='1408'/%3E%3Cline x1='-8' y1='192' x2='808' y2='1008'/%3E%3Cline x1='-8' y1='-608' x2='808' y2='208'/%3E%3Cline x1='-8' y1='-208' x2='808' y2='608'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='8'%3E%3Cline x1='-8' y1='567' x2='808' y2='1383'/%3E%3Cline x1='-8' y1='217' x2='808' y2='1033'/%3E%3Cline x1='-8' y1='-233' x2='808' y2='583'/%3E%3Cline x1='-8' y1='-583' x2='808' y2='233'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='7'%3E%3Cline x1='-8' y1='242' x2='808' y2='1058'/%3E%3Cline x1='-8' y1='542' x2='808' y2='1358'/%3E%3Cline x1='-8' y1='-558' x2='808' y2='258'/%3E%3Cline x1='-8' y1='-258' x2='808' y2='558'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='6'%3E%3Cline x1='-8' y1='267' x2='808' y2='1083'/%3E%3Cline x1='-8' y1='517' x2='808' y2='1333'/%3E%3Cline x1='-8' y1='-533' x2='808' y2='283'/%3E%3Cline x1='-8' y1='-283' x2='808' y2='533'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='5'%3E%3Cline x1='-8' y1='292' x2='808' y2='1108'/%3E%3Cline x1='-8' y1='492' x2='808' y2='1308'/%3E%3Cline x1='-8' y1='-308' x2='808' y2='508'/%3E%3Cline x1='-8' y1='-508' x2='808' y2='308'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4'%3E%3Cline x1='-8' y1='467' x2='808' y2='1283'/%3E%3Cline x1='-8' y1='317' x2='808' y2='1133'/%3E%3Cline x1='-8' y1='-333' x2='808' y2='483'/%3E%3Cline x1='-8' y1='-483' x2='808' y2='333'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3'%3E%3Cline x1='-8' y1='342' x2='808' y2='1158'/%3E%3Cline x1='-8' y1='442' x2='808' y2='1258'/%3E%3Cline x1='-8' y1='-458' x2='808' y2='358'/%3E%3Cline x1='-8' y1='-358' x2='808' y2='458'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2'%3E%3Cline x1='-8' y1='367' x2='808' y2='1183'/%3E%3Cline x1='-8' y1='417' x2='808' y2='1233'/%3E%3Cline x1='-8' y1='-433' x2='808' y2='383'/%3E%3Cline x1='-8' y1='-383' x2='808' y2='433'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='1'%3E%3Cline x1='-8' y1='392' x2='808' y2='1208'/%3E%3Cline x1='-8' y1='-408' x2='808' y2='408'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+.user-profile {
+    align-self: flex-start;
+    justify-self: center;
+    margin: 30px 0px 0px 0px;
+    padding: 20px;
+    background: rgba(66, 66, 66, .3);
+}
+
+.user-profile .upi {
+    width: 60px;
+    height: 60px;
+    margin: 0px auto 10px auto;
+}
+
+.upi img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-profile h3 {
+    color: var(--col-text);
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.user-profile .link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-btn a {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+}
+
+.link-btn a:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+.link-btn h5 {
+    color: var(--col-text);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.faq-header {
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    justify-self: center;
+    color: var(--col-text);
+    border-bottom: 1px solid var(--col-text);
+}
+
+.faq-header .all-q {
+    display: flex;
+    padding: 10px 0px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-header .all-q h2 {
+    color: var(--col-text);
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.faq-header .all-q a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+}
+
+.faq-header .all-q a:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+.faq-header .no-and-filter h3 {
+    font-weight: 400;
+    font-size: 18px;
+    padding: 10px 0px;
+}
+
+.questions-wrapper {
+    margin: 0px auto 0px auto;
+    width: 80%;
+    align-self: flex-start;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.questions {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: rgb(29, 29, 29);
+    padding: 15px;
+    color: var(--col-text);
+    -webkit-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    transition: .4s ease;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 10fr;
+}
+
+.questions:hover {
+    box-shadow: none;
+}
+
+.questions .user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    justify-self: center;
+}
+
+.questions .user-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.questions .user-content {
+    margin-left: 10px;
+}
+
+.questions .q-title a {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-decoration: none;
+    color: #4FC3F7;
+}
+
+.questions .q-title a:hover {
+    color: #0277BD;
+}
+
+.questions .q-body {
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+.questions .q-body div {
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.questions .q-body div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(29, 29, 29, 0), rgba(29, 29, 29, .5) 70% , rgba(29, 29, 29, 1) 90%);
+}
+
+.questions .q-tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+
+.questions .q-tag h5 {
+    font-weight: 500;
+    text-transform: lowercase;
+    background: #424242;
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.questions .q-tag .counter-time-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.questions .counter-time-name .answer-counter h6 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 30px;
+    background: #1B5E20;
+    padding: 2px 7px;
+    border-radius: 30px;
+}
+
+.questions .counter-time-name .time-posted-name h6 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.filter {
+    align-self: flex-start;
+    justify-self: center;
+    margin: 30px 0px 0px 0px;
+    background: rgba(66, 66, 66, .3);
+    padding: 20px;
+    width: 200px;
+    grid-column-start: 3;
+}
+
+.filter h4 {
+    padding: 0px 0px 10px 0px;
+    font-size: 16px;
+    color: var(--col-text);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--col-text);
+}
+
+.filter .filters {
+    height: 190px;
+    overflow-y: auto;
+    padding: 0px 30px;
+    margin-top: 15px;
+}
+
+.filter .all-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.all-filters form {
+    width: 100%;
+}
+
+.filter .all-filters .all-tags {
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(0, 145, 234, .5);
+    border: none;
+    margin: 5px 0px;
+    padding: 5px;
+    color: var(--col-text);
+    width: 100%;
+    border-radius: 30px;
+    text-transform: lowercase;
+}
+
+.all-filters .all-tags:hover {
+    background-color: rgba(0, 145, 234, 1);
+}
+
+.all-filters .all-tags:active {
+    background: var(--btn);
+}
+
+.filters .rest-tags {
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(0, 145, 234, .5);
+    border: none;
+    margin: 5px 0px;
+    padding: 5px;
+    color: var(--col-text);
+    width: 100%;
+    border-radius: 30px;
+    text-transform: lowercase;
+}
+
+.filters .rest-tags:hover {
+    background-color: rgba(0, 145, 234, 1);
+}
+
+.filters .rest-tags:active {
+    background: var(--btn);
+}
+
+
+#myBtn {
+    width: 50px;
+    height: 50px;
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 35px;
+    /* Place the button at the bottom of the page */
+    right: 80px;
+    /* Place the button 30px from the right */
+    z-index: 20;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    ;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 10px;
+    /* Some padding */
+    border-radius: 50%;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+    -webkit-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+}
+
+
+
+/*----------------------------------post answer-----------------------------------------------------------------------------------------------------------*/
+
+
+.show-question {
+    width: 70%;
+    margin: 50px auto 0px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--col-text);
+}
+
+.show-question h1 {
+    color: var(--col-text);
+    padding: 10px;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.show-question .question-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.show-question .question-top a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+}
+
+.show-question .question-top a:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+.answers {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: rgb(29, 29, 29);
+    padding: 15px;
+    color: var(--col-text);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 10fr;
+    -webkit-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+}
+
+.answers .user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    justify-self: center;
+}
+
+.answers .user-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.answers .user-content {
+    margin-left: 10px;
+}
+
+.answers .q-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answers .q-title .user-access-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answers .q-title .user-access-btn a {
+    display: block;
+    font-size: 18px;
+    margin: 0px 10px;
+    padding: 1px 4px;
+}
+
+.answers .q-title .user-access-btn button {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    margin: 0px 10px;
+    padding: 1px 4px;
+}
+
+.answers .q-title .user-access-btn a {
+    color: #FFD600;
+}
+
+.answers .q-title .user-access-btn a:hover {
+    color: #F9A825;
+}
+
+
+.answers .q-title .user-access-btn a:active {
+    color: var(--btn);
+}
+
+
+.answers .q-title .user-access-btn button {
+    color: #F44336;
+}
+
+.answers .q-title .user-access-btn button:hover {
+    color: #D50000;
+}
+
+.answers .q-title .user-access-btn button:active {
+    color: var(--btn);
+}
+
+.answers .q-title h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0px;
+    color: #4FC3F7;
+}
+
+.answers .q-body {
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+.answers .q-tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    margin-top: 10px;
+}
+
+.answers .q-tag h5 {
+    font-weight: 500;
+    text-transform: lowercase;
+    background: #424242;
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.answers .q-tag .counter-time-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.answers .counter-time-name .time-posted-name h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.delete-confirm-overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.delete-confirm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-col);
+    padding: 0px 30px;
+    z-index: 20;
+    border-radius: 20px;
+    height: 150px;
+    width: 500px;
+    display: none;
+    opacity: 0;
+}
+
+.delete-confirm p {
+    text-align: center;
+    color: var(--col-text);
+    margin: 20px 0px;
+}
+
+.delete-confirm p:nth-child(1) {
+    font-size: 18px;
+}
+
+.delete-confirm p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.delete-confirm .yes-no {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.delete-confirm form .yes {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-confirm form .yes:hover {
+    color: #F44336;
+}
+
+.delete-confirm .no {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-confirm .no:hover {
+    color: var(--btn);
+}
+
+
+
+.delete-answer-overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.delete-answer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-col);
+    padding: 0px 30px;
+    z-index: 20;
+    border-radius: 20px;
+    height: 150px;
+    display: none;
+    opacity: 0;
+    width: 400px;
+}
+
+.delete-answer p {
+    text-align: center;
+    color: var(--col-text);
+    margin: 20px 0px;
+}
+
+.delete-answer p:nth-child(1) {
+    font-size: 18px;
+}
+
+.delete-answer p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.delete-answer .yes-no {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.delete-answer form .yes {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-answer form .yes:hover {
+    color: #F44336;
+}
+
+.delete-answer .no {
+    color: var(--col-text);
+    outline: none;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-answer .no:hover {
+    color: var(--btn);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.answer-wrapper {
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke-opacity='0.02'%3E%3Cg stroke='%23ffffff' stroke-width='17'%3E%3Cline x1='-8' y1='-8' x2='808' y2='808'/%3E%3Cline x1='-8' y1='792' x2='808' y2='1608'/%3E%3Cline x1='-8' y1='-808' x2='808' y2='8'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='16'%3E%3Cline x1='-8' y1='767' x2='808' y2='1583'/%3E%3Cline x1='-8' y1='17' x2='808' y2='833'/%3E%3Cline x1='-8' y1='-33' x2='808' y2='783'/%3E%3Cline x1='-8' y1='-783' x2='808' y2='33'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='15'%3E%3Cline x1='-8' y1='742' x2='808' y2='1558'/%3E%3Cline x1='-8' y1='42' x2='808' y2='858'/%3E%3Cline x1='-8' y1='-58' x2='808' y2='758'/%3E%3Cline x1='-8' y1='-758' x2='808' y2='58'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='14'%3E%3Cline x1='-8' y1='67' x2='808' y2='883'/%3E%3Cline x1='-8' y1='717' x2='808' y2='1533'/%3E%3Cline x1='-8' y1='-733' x2='808' y2='83'/%3E%3Cline x1='-8' y1='-83' x2='808' y2='733'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='13'%3E%3Cline x1='-8' y1='92' x2='808' y2='908'/%3E%3Cline x1='-8' y1='692' x2='808' y2='1508'/%3E%3Cline x1='-8' y1='-108' x2='808' y2='708'/%3E%3Cline x1='-8' y1='-708' x2='808' y2='108'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='12'%3E%3Cline x1='-8' y1='667' x2='808' y2='1483'/%3E%3Cline x1='-8' y1='117' x2='808' y2='933'/%3E%3Cline x1='-8' y1='-133' x2='808' y2='683'/%3E%3Cline x1='-8' y1='-683' x2='808' y2='133'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='11'%3E%3Cline x1='-8' y1='642' x2='808' y2='1458'/%3E%3Cline x1='-8' y1='142' x2='808' y2='958'/%3E%3Cline x1='-8' y1='-158' x2='808' y2='658'/%3E%3Cline x1='-8' y1='-658' x2='808' y2='158'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='10'%3E%3Cline x1='-8' y1='167' x2='808' y2='983'/%3E%3Cline x1='-8' y1='617' x2='808' y2='1433'/%3E%3Cline x1='-8' y1='-633' x2='808' y2='183'/%3E%3Cline x1='-8' y1='-183' x2='808' y2='633'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='9'%3E%3Cline x1='-8' y1='592' x2='808' y2='1408'/%3E%3Cline x1='-8' y1='192' x2='808' y2='1008'/%3E%3Cline x1='-8' y1='-608' x2='808' y2='208'/%3E%3Cline x1='-8' y1='-208' x2='808' y2='608'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='8'%3E%3Cline x1='-8' y1='567' x2='808' y2='1383'/%3E%3Cline x1='-8' y1='217' x2='808' y2='1033'/%3E%3Cline x1='-8' y1='-233' x2='808' y2='583'/%3E%3Cline x1='-8' y1='-583' x2='808' y2='233'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='7'%3E%3Cline x1='-8' y1='242' x2='808' y2='1058'/%3E%3Cline x1='-8' y1='542' x2='808' y2='1358'/%3E%3Cline x1='-8' y1='-558' x2='808' y2='258'/%3E%3Cline x1='-8' y1='-258' x2='808' y2='558'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='6'%3E%3Cline x1='-8' y1='267' x2='808' y2='1083'/%3E%3Cline x1='-8' y1='517' x2='808' y2='1333'/%3E%3Cline x1='-8' y1='-533' x2='808' y2='283'/%3E%3Cline x1='-8' y1='-283' x2='808' y2='533'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='5'%3E%3Cline x1='-8' y1='292' x2='808' y2='1108'/%3E%3Cline x1='-8' y1='492' x2='808' y2='1308'/%3E%3Cline x1='-8' y1='-308' x2='808' y2='508'/%3E%3Cline x1='-8' y1='-508' x2='808' y2='308'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4'%3E%3Cline x1='-8' y1='467' x2='808' y2='1283'/%3E%3Cline x1='-8' y1='317' x2='808' y2='1133'/%3E%3Cline x1='-8' y1='-333' x2='808' y2='483'/%3E%3Cline x1='-8' y1='-483' x2='808' y2='333'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3'%3E%3Cline x1='-8' y1='342' x2='808' y2='1158'/%3E%3Cline x1='-8' y1='442' x2='808' y2='1258'/%3E%3Cline x1='-8' y1='-458' x2='808' y2='358'/%3E%3Cline x1='-8' y1='-358' x2='808' y2='458'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2'%3E%3Cline x1='-8' y1='367' x2='808' y2='1183'/%3E%3Cline x1='-8' y1='417' x2='808' y2='1233'/%3E%3Cline x1='-8' y1='-433' x2='808' y2='383'/%3E%3Cline x1='-8' y1='-383' x2='808' y2='433'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='1'%3E%3Cline x1='-8' y1='392' x2='808' y2='1208'/%3E%3Cline x1='-8' y1='-408' x2='808' y2='408'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 20px 0px;
+}
+
+
+.show-answer {
+    width: 70%;
+    margin: 50px auto 0px auto;
+    padding-bottom: 10px;
+}
+
+.show-answer .answer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.show-answer .answer-top h1 {
+    color: var(--col-text);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.show-answer .answer-top a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+}
+
+.show-answer .answer-top a:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+.answer-body {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: rgb(29, 29, 29);
+    padding: 15px;
+    color: var(--col-text);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 10fr;
+    -webkit-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    box-shadow: 5px 7px 14px 2px rgba(0, 0, 0, 0.45);
+    position: relative;
+}
+
+.answer-body .user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    justify-self: center;
+}
+
+.answer-body .user-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.answer-body .user-content {
+    margin-left: 10px;
+}
+
+
+.answer-body .answer-access-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 20px;
+    right: 20px;
+}
+
+
+.answer-body .answer-access-btn a:nth-child(1) {
+    margin: 0px 20px;
+    color: #FFD600;
+}
+
+.answer-body .answer-access-btn a:nth-child(2) {
+    margin: 0px 20px;
+    color: #F44336;
+}
+
+
+
+.answer-body .answer-access-btn a:nth-child(1):hover {
+    color: #F9A825;
+}
+
+.answer-body .answer-access-btn a:nth-child(1):active {
+    color: var(--btn);
+}
+
+.answer-body .answer-access-btn a:nth-child(2):hover {
+    color: #D50000;
+}
+
+.answer-body .answer-access-btn a:nth-child(2):active {
+    color: var(--btn);
+}
+
+
+.answer-body .q-body {
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+.answer-body .counter-time-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answer-body .counter-time-name .expert-user h4{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.answer-body .counter-time-name .expert-user h4 i{
+    margin-right: 10px;
+    color: var(--btn);
+}
+
+.answer-body .counter-time-name .time-posted-name h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#id_title {
+    font-size: 17px;
+    width: 80%;
+    outline: none;
+    border: 1px solid white;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+#id_title:focus {
+    border: 1px solid #40C4FF;
+}
+
+#id_tag_id {
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid white;
+}
+
+#id_tag_id:focus {
+    border: 1px solid #40C4FF;
+}
+
+#cke_id_ans_body {
+    width: 100% !important;
+}
+
+#cke_id_ques {
+    width: 100% !important;
+}
+
+.ask-qw {
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke-opacity='0.02'%3E%3Cg stroke='%23ffffff' stroke-width='17'%3E%3Cline x1='-8' y1='-8' x2='808' y2='808'/%3E%3Cline x1='-8' y1='792' x2='808' y2='1608'/%3E%3Cline x1='-8' y1='-808' x2='808' y2='8'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='16'%3E%3Cline x1='-8' y1='767' x2='808' y2='1583'/%3E%3Cline x1='-8' y1='17' x2='808' y2='833'/%3E%3Cline x1='-8' y1='-33' x2='808' y2='783'/%3E%3Cline x1='-8' y1='-783' x2='808' y2='33'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='15'%3E%3Cline x1='-8' y1='742' x2='808' y2='1558'/%3E%3Cline x1='-8' y1='42' x2='808' y2='858'/%3E%3Cline x1='-8' y1='-58' x2='808' y2='758'/%3E%3Cline x1='-8' y1='-758' x2='808' y2='58'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='14'%3E%3Cline x1='-8' y1='67' x2='808' y2='883'/%3E%3Cline x1='-8' y1='717' x2='808' y2='1533'/%3E%3Cline x1='-8' y1='-733' x2='808' y2='83'/%3E%3Cline x1='-8' y1='-83' x2='808' y2='733'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='13'%3E%3Cline x1='-8' y1='92' x2='808' y2='908'/%3E%3Cline x1='-8' y1='692' x2='808' y2='1508'/%3E%3Cline x1='-8' y1='-108' x2='808' y2='708'/%3E%3Cline x1='-8' y1='-708' x2='808' y2='108'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='12'%3E%3Cline x1='-8' y1='667' x2='808' y2='1483'/%3E%3Cline x1='-8' y1='117' x2='808' y2='933'/%3E%3Cline x1='-8' y1='-133' x2='808' y2='683'/%3E%3Cline x1='-8' y1='-683' x2='808' y2='133'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='11'%3E%3Cline x1='-8' y1='642' x2='808' y2='1458'/%3E%3Cline x1='-8' y1='142' x2='808' y2='958'/%3E%3Cline x1='-8' y1='-158' x2='808' y2='658'/%3E%3Cline x1='-8' y1='-658' x2='808' y2='158'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='10'%3E%3Cline x1='-8' y1='167' x2='808' y2='983'/%3E%3Cline x1='-8' y1='617' x2='808' y2='1433'/%3E%3Cline x1='-8' y1='-633' x2='808' y2='183'/%3E%3Cline x1='-8' y1='-183' x2='808' y2='633'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='9'%3E%3Cline x1='-8' y1='592' x2='808' y2='1408'/%3E%3Cline x1='-8' y1='192' x2='808' y2='1008'/%3E%3Cline x1='-8' y1='-608' x2='808' y2='208'/%3E%3Cline x1='-8' y1='-208' x2='808' y2='608'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='8'%3E%3Cline x1='-8' y1='567' x2='808' y2='1383'/%3E%3Cline x1='-8' y1='217' x2='808' y2='1033'/%3E%3Cline x1='-8' y1='-233' x2='808' y2='583'/%3E%3Cline x1='-8' y1='-583' x2='808' y2='233'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='7'%3E%3Cline x1='-8' y1='242' x2='808' y2='1058'/%3E%3Cline x1='-8' y1='542' x2='808' y2='1358'/%3E%3Cline x1='-8' y1='-558' x2='808' y2='258'/%3E%3Cline x1='-8' y1='-258' x2='808' y2='558'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='6'%3E%3Cline x1='-8' y1='267' x2='808' y2='1083'/%3E%3Cline x1='-8' y1='517' x2='808' y2='1333'/%3E%3Cline x1='-8' y1='-533' x2='808' y2='283'/%3E%3Cline x1='-8' y1='-283' x2='808' y2='533'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='5'%3E%3Cline x1='-8' y1='292' x2='808' y2='1108'/%3E%3Cline x1='-8' y1='492' x2='808' y2='1308'/%3E%3Cline x1='-8' y1='-308' x2='808' y2='508'/%3E%3Cline x1='-8' y1='-508' x2='808' y2='308'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4'%3E%3Cline x1='-8' y1='467' x2='808' y2='1283'/%3E%3Cline x1='-8' y1='317' x2='808' y2='1133'/%3E%3Cline x1='-8' y1='-333' x2='808' y2='483'/%3E%3Cline x1='-8' y1='-483' x2='808' y2='333'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3'%3E%3Cline x1='-8' y1='342' x2='808' y2='1158'/%3E%3Cline x1='-8' y1='442' x2='808' y2='1258'/%3E%3Cline x1='-8' y1='-458' x2='808' y2='358'/%3E%3Cline x1='-8' y1='-358' x2='808' y2='458'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2'%3E%3Cline x1='-8' y1='367' x2='808' y2='1183'/%3E%3Cline x1='-8' y1='417' x2='808' y2='1233'/%3E%3Cline x1='-8' y1='-433' x2='808' y2='383'/%3E%3Cline x1='-8' y1='-383' x2='808' y2='433'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='1'%3E%3Cline x1='-8' y1='392' x2='808' y2='1208'/%3E%3Cline x1='-8' y1='-408' x2='808' y2='408'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 40px 0px 80px 0px;
+}
+
+.ask-question-wrapper {
+    width: 60%;
+    margin: 0px auto 0px auto;
+}
+
+.ask-question-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ask-question-wrapper h1 {
+    color: var(--col-text);
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    font-size: 26px;
+    background-color: rgba(66, 66, 66, .5);
+}
+
+.q-title-div {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.q-title-div label {
+    width: 200px;
+    text-align: end;
+    color: var(--col-text);
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.q-body-div {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.q-body-div label {
+    width: 200px;
+    text-align: end;
+    color: var(--col-text);
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+
+.q-tag-div {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.q-tag-div label {
+    width: 200px;
+    text-align: end;
+    color: var(--col-text);
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.ask-question-wrapper input[type=submit] {
+    text-decoration: none;
+    width: 180px;
+    margin: 20px 0px 0px 80%;
+    display: block;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.ask-question-wrapper input[type=submit]:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+
+.ask-an {
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke-opacity='0.02'%3E%3Cg stroke='%23ffffff' stroke-width='17'%3E%3Cline x1='-8' y1='-8' x2='808' y2='808'/%3E%3Cline x1='-8' y1='792' x2='808' y2='1608'/%3E%3Cline x1='-8' y1='-808' x2='808' y2='8'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='16'%3E%3Cline x1='-8' y1='767' x2='808' y2='1583'/%3E%3Cline x1='-8' y1='17' x2='808' y2='833'/%3E%3Cline x1='-8' y1='-33' x2='808' y2='783'/%3E%3Cline x1='-8' y1='-783' x2='808' y2='33'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='15'%3E%3Cline x1='-8' y1='742' x2='808' y2='1558'/%3E%3Cline x1='-8' y1='42' x2='808' y2='858'/%3E%3Cline x1='-8' y1='-58' x2='808' y2='758'/%3E%3Cline x1='-8' y1='-758' x2='808' y2='58'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='14'%3E%3Cline x1='-8' y1='67' x2='808' y2='883'/%3E%3Cline x1='-8' y1='717' x2='808' y2='1533'/%3E%3Cline x1='-8' y1='-733' x2='808' y2='83'/%3E%3Cline x1='-8' y1='-83' x2='808' y2='733'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='13'%3E%3Cline x1='-8' y1='92' x2='808' y2='908'/%3E%3Cline x1='-8' y1='692' x2='808' y2='1508'/%3E%3Cline x1='-8' y1='-108' x2='808' y2='708'/%3E%3Cline x1='-8' y1='-708' x2='808' y2='108'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='12'%3E%3Cline x1='-8' y1='667' x2='808' y2='1483'/%3E%3Cline x1='-8' y1='117' x2='808' y2='933'/%3E%3Cline x1='-8' y1='-133' x2='808' y2='683'/%3E%3Cline x1='-8' y1='-683' x2='808' y2='133'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='11'%3E%3Cline x1='-8' y1='642' x2='808' y2='1458'/%3E%3Cline x1='-8' y1='142' x2='808' y2='958'/%3E%3Cline x1='-8' y1='-158' x2='808' y2='658'/%3E%3Cline x1='-8' y1='-658' x2='808' y2='158'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='10'%3E%3Cline x1='-8' y1='167' x2='808' y2='983'/%3E%3Cline x1='-8' y1='617' x2='808' y2='1433'/%3E%3Cline x1='-8' y1='-633' x2='808' y2='183'/%3E%3Cline x1='-8' y1='-183' x2='808' y2='633'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='9'%3E%3Cline x1='-8' y1='592' x2='808' y2='1408'/%3E%3Cline x1='-8' y1='192' x2='808' y2='1008'/%3E%3Cline x1='-8' y1='-608' x2='808' y2='208'/%3E%3Cline x1='-8' y1='-208' x2='808' y2='608'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='8'%3E%3Cline x1='-8' y1='567' x2='808' y2='1383'/%3E%3Cline x1='-8' y1='217' x2='808' y2='1033'/%3E%3Cline x1='-8' y1='-233' x2='808' y2='583'/%3E%3Cline x1='-8' y1='-583' x2='808' y2='233'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='7'%3E%3Cline x1='-8' y1='242' x2='808' y2='1058'/%3E%3Cline x1='-8' y1='542' x2='808' y2='1358'/%3E%3Cline x1='-8' y1='-558' x2='808' y2='258'/%3E%3Cline x1='-8' y1='-258' x2='808' y2='558'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='6'%3E%3Cline x1='-8' y1='267' x2='808' y2='1083'/%3E%3Cline x1='-8' y1='517' x2='808' y2='1333'/%3E%3Cline x1='-8' y1='-533' x2='808' y2='283'/%3E%3Cline x1='-8' y1='-283' x2='808' y2='533'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='5'%3E%3Cline x1='-8' y1='292' x2='808' y2='1108'/%3E%3Cline x1='-8' y1='492' x2='808' y2='1308'/%3E%3Cline x1='-8' y1='-308' x2='808' y2='508'/%3E%3Cline x1='-8' y1='-508' x2='808' y2='308'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4'%3E%3Cline x1='-8' y1='467' x2='808' y2='1283'/%3E%3Cline x1='-8' y1='317' x2='808' y2='1133'/%3E%3Cline x1='-8' y1='-333' x2='808' y2='483'/%3E%3Cline x1='-8' y1='-483' x2='808' y2='333'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3'%3E%3Cline x1='-8' y1='342' x2='808' y2='1158'/%3E%3Cline x1='-8' y1='442' x2='808' y2='1258'/%3E%3Cline x1='-8' y1='-458' x2='808' y2='358'/%3E%3Cline x1='-8' y1='-358' x2='808' y2='458'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2'%3E%3Cline x1='-8' y1='367' x2='808' y2='1183'/%3E%3Cline x1='-8' y1='417' x2='808' y2='1233'/%3E%3Cline x1='-8' y1='-433' x2='808' y2='383'/%3E%3Cline x1='-8' y1='-383' x2='808' y2='433'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='1'%3E%3Cline x1='-8' y1='392' x2='808' y2='1208'/%3E%3Cline x1='-8' y1='-408' x2='808' y2='408'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 10px 0px 80px 0px;
+}
+
+.ask-answer-wrapper {
+    width: 70%;
+    margin: 0px auto 0px auto;
+}
+
+.ask-answer-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ask-answer-wrapper h1 {
+    color: var(--col-text);
+    font-size: 26px;
+    font-weight: 500;
+    margin: 20px 0px 5px 0px;
+    padding: 0px 0px 0px 10px;
+}
+
+.a-body-div {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.a-body-div label {
+    display: none;
+}
+
+
+.ask-answer-wrapper input[type=submit] {
+    text-decoration: none;
+    width: 170px;
+    margin: 20px 0px;
+    display: block;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 19px -8px rgba(0, 0, 0, 0.75);
+    transition: .4s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.ask-answer-wrapper input[type=submit]:hover {
+    -webkit-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 7px 26px -5px rgba(0, 0, 0, 0.75);
+}
+
+/*------------------------------------------------------------pagination---------------------------------------------------------*/
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .step-links a{
+    margin: 0px 5px;
+    text-decoration: none;
+    color: #B2DFDB;
+}
+
+.pagination .step-links a:hover{
+    color: #26A69A;
+}
+
+.pagination .step-links .current{
+    color: var(--col-text);
+    margin: 0px 20px;
+}
+

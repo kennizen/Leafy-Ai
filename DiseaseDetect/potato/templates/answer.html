@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="answer-wrapper">
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+	<div class="show-question">
+		<div class="question-top">
+			<h1>Question :</h1>
+			<a href="{% url 'faq-home' %}">Back to questions</a>
+		</div>
+		<div class="answers">
+			{% for q in ques %}
+			<div class="user-img">
+				{% for image in avatar %}
+					{% ifequal q.author image.user %}
+						<img src="{{image.avatar.url}}" alt text="profile image">
+					{% endifequal %}
+				{% endfor %}
+			</div>
+			<div class="user-content">
+				<div class="q-title">
+					{% ifequal user q.author %}
+						<h2>{{q.title}}</h2>
+						<div class="user-access-btn">
+							<a href="{% url 'edit-qn' q.id %}"><i class="far fa-edit"></i></a>
+							<button onclick="openDelete()"><i class="fas fa-trash-alt"></i></button>
+						</div>
+					{% else %}
+						<h2>{{q.title}}</h2>
+					{% endifequal %}
+				</div>
+				<div class="q-body">
+					<p>{{q.ques | safe}}</p>
+					<p>{{q.media}}</p>
+				</div>
+				<div class="q-tag">
+					<div class="tags">
+						<h5>{{q.tag_id}}</h5>
+					</div>
+					<div class="counter-time-name">
+						<div class="time-posted-name">
+							<h6>Posted by {{q.author}}</h6>
+							<h6>on {{q.datetime}}</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="delete-confirm-overlay" onclick="closeDelete()"></div>
+
+	<div class="delete-confirm">
+		<p>Delete question ?</p>
+		<p>Note : the question along with its answers will be deleted.</p>
+		<div class="yes-no">
+			<form method='POST' action='{% url "delete-qn" id %}'>
+				{% csrf_token %}
+				<input class="yes" type="submit" name="yes" value="yes">
+			</form>
+			<button class="no" onclick="closeDelete()">no</button>
+		</div>
+	</div>
+
+	
+
+	<div class="show-answer">
+		<div class="answer-top">
+			<h1>Answers :</h1>
+			<a href="{% url 'postans' id %}">Post answer</a>
+		</div>
+		{% for a in ans %}
+		<div class="answer-body">
+			<div class="answer-access-btn">
+				{% ifequal user a.uid %}
+					<a href="{% url 'edit-an' a.id %}"><i class="far fa-edit"></i></a>
+					<a href="{% url 'delete-an' a.id %}"><i class="fas fa-trash-alt"></i></a>
+				{% endifequal %}
+			</div>
+			<div class="user-img">
+				{% for image in avatar %}
+					{% ifequal a.uid image.user %}
+						<img src="{{image.avatar.url}}" alt text="profile image">
+					{% endifequal %}
+				{% endfor %}
+			</div>
+			<div class="user-content">
+				<div class="q-body">
+					<p>{{ a.ans_body | safe }}</p>
+					<p>{{ a.media }}</p>
+				</div>
+				<div class="q-tag">
+					<div class="counter-time-name">
+						<div class="expert-user">
+							{% for u in avatar %}
+								{% if a.uid == u.user %}
+									{% if u.is_expert %}
+										<h4><i class="fas fa-user-check"></i>Expert</h4>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="time-posted-name">
+							<h6>Answered by {{a.uid}}</h6>
+							<h6>on {{a.datetime}}</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'js/answer.js' %}"></script>
+
+{% endblock %}

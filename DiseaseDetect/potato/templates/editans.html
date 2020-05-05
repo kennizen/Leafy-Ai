@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="ask-an">
+	<div class="show-question">
+		<div class="question-top">
+			<h1>Question :</h1>
+		</div>
+		<div class="answers">
+			{% for q in question %}
+			<div class="user-img">
+				{% for image in avatar %}
+				{% ifequal q.author image.user %}
+				<img src="{{image.avatar.url}}" alt text="profile image">
+				{% endifequal %}
+				{% endfor %}
+			</div>
+			<div class="user-content">
+				<div class="q-title">
+					<h2>{{q.title}}</h2>
+				</div>
+				<div class="q-body">
+					<p>{{q.ques | safe}}</p>
+					<p>{{q.media}}</p>
+				</div>
+				<div class="q-tag">
+					<div class="tags">
+						<h5>{{q.tag_id}}</h5>
+					</div>
+					<div class="counter-time-name">
+						<div class="time-posted-name">
+							<h6>Posted by {{q.author}}</h6>
+							<h6>on {{q.datetime}}</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="ask-answer-wrapper">
+		<h1>Edit your answer :</h1>
+		<form action="{% url 'edit-an' u %}" method="post" autocomplete="off" onsubmit="return CheckAnsForm()">
+			{% csrf_token %}
+			<div class="a-body-div">
+				{{form | safe}}
+				{{form.media}}
+			</div>
+			<input id="bttn" type="submit" name="" value="Update answer">
+		</form>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'js/edita.js' %}"></script>
+
+{% endblock %}

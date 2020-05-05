@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="tac">
+    <h1>Terms and Conditions</h1>
+    <p>The following terms and conditions should be followed and abided by at all times. Violation of the terms may lead
+        to suspension of your account.
+    </p>
+    <ol>
+        <li>Please do not post content that is unlawful, malicious, misleading, defamatory, harmful, threatening, abusive, harassing, vulgar, obscene, libelous, objectionable, inappropriate, improper, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable.</li>
+        <li>Please do not post any content that infringes any patent, trademark, trade secret, copyright or other proprietary rights or rights of publicity or privacy rights of any third party.</li>
+        <li>Please do not post any unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation.</li>
+        <li>Please do not post any material that contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of the website.</li>
+        <li>Please make sure the content you post is authentic. False answers and irrelevant questions will be deleted immediately.</li>
+        <li>Please do not disclose your personal or confidential information in any post.</li>
+    </ol>
+</div>
+
+<div class="about-leafy">
+    <h1>About Leafy</h1>
+    <p>Leafy is an amalgamation of Machine Learning and Web Technology which delivers automated disease detection to any
+        Desktop/Mobile. At the core Leafy uses a Neural Network to process the image through a series of transformations
+        and feature extraction to classify it into one of eleven categories of diseases. The higher levels of the Neural
+        Network perform actions such as edge detection and shape analysis whereas the lower levels are mostly concerned
+        with detection of patterns and anomalies. <br>
+        In the initial phase the Neural Network was fed with more than 10,000 images of various diseases and trained to
+        recognize them. It was trained continuously for 7 days till the neural network was able to predict the diseases
+        with a fair level of confidence. <br>
+        After the training was complete the neural network was hooked to a web interface designed for better
+        accessibility by end users. To use it, first the user has to upload the image for prediction. After the
+        necessary processing is completed the name of the disease along with its symptoms and remedies will be shown to
+        the user. In case of further queries questions can be posted in the QnA section. Our team of moderators and
+        experts will try their best to answer those questions at the earliest possible time.
+    </p>
+    <div>
+        <img src="{% static 'images/nn3.gif' %}" alt="NN">
+        <h5>Working Neural Network</h5>
+    </div> 
+</div>
+
+
+
+{% endblock %}
