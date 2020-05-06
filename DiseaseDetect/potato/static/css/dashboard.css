@@ -11,8 +11,7 @@ html {
     left: 60%;
     transform: translateX(-60%);
     background-color: #f5f5f5; /* Black background with opacity */
-    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */ /* Add a pointer on hover */
 }
 
 #mail {

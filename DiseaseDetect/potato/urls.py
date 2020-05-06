@@ -9,6 +9,7 @@ urlpatterns = [
     path('detection/fullResult/<str:result>/', views.fullResult, name = 'fullResult'),
     path('feedback/', views.feedback, name = 'user-feedback'),
     path('faq/', views.faq, name = 'faq-home'),
+    path('chat/',views.chat, name='chatbot'),
     path('info/', views.info, name = 'info'),
     path('getans/<int:id>/',views.getans, name = 'getans'),
     path('postans/<int:id>/',views.postans, name = 'postans'),

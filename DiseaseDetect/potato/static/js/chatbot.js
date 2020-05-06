@@ -32,7 +32,7 @@ function listendom(no) {
 $(window).load(function () {
     $messages.mCustomScrollbar();
     setTimeout(function () {
-        serverMessage('hello i am customer support bot type hi and i will show you quick buttions');
+        serverMessage('Hi! I am Leafy Bot. I am here to answer your questions. How can i help you ?');
     }, 100);
 });
 
@@ -44,27 +44,31 @@ function updateScrollbar() {
 }
 
 function insertMessage() {
-    msg = $('.message-input').val().trim();
-    if (msg == '') {
+    msg = $('.message-input').val();
+    if ($.trim(msg) == '') {
         return false;
     }
-    $(
-        '<div class="message message-personal"><figure class="user-avatar"><img src="css/bot.png" /></figure><span></span>' +
-            msg +
-            '</div>'
-    )
-        .appendTo($('.mCSB_container'))
-        .addClass('new');
+    $('<div class="message message-personal">' + msg + '<figure class="user-avatar"><img src='+human+'></figure></div>').appendTo($('.mCSB_container')).addClass('new');
     // fetchmsg()
 
     $('.message-input').val(null);
-    serverMessage('hello');
     updateScrollbar();
 }
 
 document.getElementById('mymsg').onsubmit = (e) => {
     e.preventDefault();
-    insertMessage();
+    $.ajax({
+        type: 'POST',
+        url: '/chat/',
+        data: {
+            query: $('.message-input').val(),
+            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+        },
+        success: function (data) {
+            insertMessage();
+            serverMessage(data.replyy);
+        },
+    });
 };
 
 function serverMessage(response2) {
@@ -72,14 +76,18 @@ function serverMessage(response2) {
         return false;
     }
     $(
-        '<div class="message loading new"><figure class="avatar"><img src="css/bot.png" /></figure><span></span></div>'
+        '<div class="message loading new"><figure class="avatar"><img src=' +
+            bot +
+            '/></figure><span></span></div>'
     ).appendTo($('.mCSB_container'));
     updateScrollbar();
 
     setTimeout(function () {
         $('.message.loading').remove();
         $(
-            '<div class="message new"><figure class="avatar"><img src="css/bot.png" /></figure>' +
+            '<div class="message new"><figure class="avatar"><img src=' +
+                bot +
+                '/></figure>' +
                 response2 +
                 '</div>'
         )
@@ -87,27 +95,4 @@ function serverMessage(response2) {
             .addClass('new');
         updateScrollbar();
     }, 100 + Math.random() * 20 * 100);
-}
-
-function fetchmsg() {
-    var url = 'http://localhost:5000/send-msg';
-
-    const data = new URLSearchParams();
-    for (const pair of new FormData(document.getElementById('mymsg'))) {
-        data.append(pair[0], pair[1]);
-        console.log(pair);
-    }
-
-    console.log('abc', data);
-    fetch(url, {
-        method: 'POST',
-        body: data,
-    })
-        .then((res) => res.json())
-        .then((response) => {
-            console.log(response);
-            //  serverMessage(response.Reply);
-            speechSynthesis.speak(new SpeechSynthesisUtterance(response.Reply));
-        })
-        .catch((error) => console.error('Error h:', error));
 }

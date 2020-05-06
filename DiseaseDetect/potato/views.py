@@ -14,12 +14,12 @@ from django.core.mail import send_mail
 # from removebg import RemoveBg
 # import random, string
 # import numpy as np
-# import os
 # import tensorflow as tf
 # import base64
 ### Machile Learning Imports ###
 
 ###Dialogflow Webhook imports###
+import os
 from django.http import JsonResponse
 import json
 import dialogflow
@@ -140,6 +140,38 @@ def index(request):
 
         return render(request, 'index.html', args)
 
+def chat(request):
+    if request.method=="GET":
+        return render(request,'chatabot.html')
+    else:
+        #DIALOGFLOW_PROJECT_ID = 'chatbot-kovqhd'
+        DIALOGFLOW_PROJECT_ID ='chatbot-kovqhd'
+        DIALOGFLOW_LANGUAGE_CODE = 'en-US'
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'E:/code/6th Sem/DiseaseDetect/chatbot-kovqhd-787be5a40d48.json'
+        SESSION_ID = 'abcd12'
+        
+
+        text_to_be_analyzed = request.POST.get('query')
+        print(text_to_be_analyzed)
+        session_client = dialogflow.SessionsClient()
+        session = session_client.session_path(DIALOGFLOW_PROJECT_ID, SESSION_ID)
+        text_input = dialogflow.types.TextInput(text=text_to_be_analyzed, language_code=DIALOGFLOW_LANGUAGE_CODE)
+        query_input = dialogflow.types.QueryInput(text=text_input)
+        try:
+            response = session_client.detect_intent(session=session, query_input=query_input)
+        except InvalidArgument:
+            raise
+
+        print("Query text:", response.query_result.query_text)
+        print("Detected intent:", response.query_result.intent.display_name)
+        print("Detected intent confidence:", response.query_result.intent_detection_confidence)
+        print("Fulfillment text:", response.query_result.fulfillment_text)
+        
+        reply=response.query_result.fulfillment_text
+        data={
+        'replyy':reply
+        }
+        return JsonResponse(data)
 
 def fullResult(request, result):
     rem = Remedies.objects.all().filter(disease=result)
